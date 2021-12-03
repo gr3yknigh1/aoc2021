@@ -2,11 +2,11 @@ import os
 import collections
 
 
-BASE_PATH =  os.path.dirname(__file__) 
+BASE_PATH = os.path.dirname(__file__)
 INPUT_PATH = os.path.join(BASE_PATH, "input.txt")
 
 
-with open(INPUT_PATH, mode='r', encoding="utf-8") as f:
+with open(INPUT_PATH, mode="r", encoding="utf-8") as f:
     buffer = f.read()
 
 
@@ -19,14 +19,13 @@ def most_common_in_colomn(table, idx):
 
     for row in table:
         counter[row[idx]] += 1
-    
+
     return counter.most_common()[0][0]
 
 
 def revert_bit_row(bit_row):
-    return [
-        (1 if not bit else 0) for bit in bit_row
-    ]
+    return [(1 if not bit else 0) for bit in bit_row]
+
 
 def convert_to_int(bit_row):
     str_bit_row = "".join([str(bit) for bit in bit_row])
