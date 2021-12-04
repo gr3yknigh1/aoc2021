@@ -1,3 +1,9 @@
 ## Python ##
-
 venv/
+
+## Mypy
+**/.mypy_cache/
+
+
+## Visual Studio Code ##
+**/.vscode/
