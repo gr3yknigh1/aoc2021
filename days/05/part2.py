@@ -1,7 +1,6 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from typing import Literal
     Matrix = list[list[int]]
 import os
 import dataclasses
@@ -11,7 +10,7 @@ BASE_PATH = os.path.dirname(__file__)
 INPUT_PATH = os.path.join(BASE_PATH, "input.txt")
 
 
-def sign(x: int) -> Literal[-1, 1]:
+def sign(x: int) -> int:
     if x == 0: return 0
     return x // abs(x)
 

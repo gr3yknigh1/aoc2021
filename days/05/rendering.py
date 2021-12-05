@@ -15,13 +15,14 @@ def clamp(mn: int, x: int, mx: int) -> int:
         return mn
     elif mx < x:
         return mx
+    raise Exception("Unreachable")
 
 
 def get_color_from_mat_value(v: int) -> Color:
     return (v, v, v)
 
 
-def render_matrix(surf: pygame.Surface, mat: Matrix, mat_size: tuple[int, int]) -> None:
+def render_matrix(surf: pygame.surface.Surface, mat: Matrix) -> None:
     for y, row in enumerate(mat):
         for x, value in enumerate(row):
             surf.set_at((x, y), get_color_from_mat_value(clamp(0, value * 50, 255)))
@@ -39,7 +40,7 @@ def main() -> int:
     clean_color = (0, 0, 0)
     
     screen_surface.fill(clean_color)
-    render_matrix(screen_surface, mat, mat_size)
+    render_matrix(screen_surface, mat)
     pygame.display.flip()
 
     while is_running:
