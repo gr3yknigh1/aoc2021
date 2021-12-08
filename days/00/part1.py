@@ -1,9 +1,7 @@
 from __future__ import annotations
 import os
 
-
-BASE_PATH = os.path.dirname(__file__)
-INPUT_PATH = os.path.join(BASE_PATH, "input.txt")
+from shared import *
 
 
 def main() -> int:
